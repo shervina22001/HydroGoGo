@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5913579459328860718}
   - component: {fileID: 5702764108414655431}
   - component: {fileID: 3433753019816011109}
+  - component: {fileID: -1292921305163293606}
   m_Layer: 0
   m_Name: Blaser-Long Kerikil
   m_TagString: Untagged
@@ -197,6 +198,19 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 1
+--- !u!114 &-1292921305163293606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865392360500940990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7862983cacfe4184cacd0d269f2b4c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabSound: {fileID: 8300000, guid: 4bc6ab9c77ac7424ba4c58ea0f65a982, type: 3}
 --- !u!1 &3281494000938007101
 GameObject:
   m_ObjectHideFlags: 0

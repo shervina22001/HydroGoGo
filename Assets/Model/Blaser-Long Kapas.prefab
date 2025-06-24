@@ -4966,6 +4966,7 @@ GameObject:
   - component: {fileID: 6965205536085947328}
   - component: {fileID: 2657465959096503060}
   - component: {fileID: 1562001857336806319}
+  - component: {fileID: -224891858956995373}
   m_Layer: 0
   m_Name: Blaser-Long Kapas
   m_TagString: Untagged
@@ -5164,6 +5165,19 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 1
+--- !u!114 &-224891858956995373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430365041552316429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7862983cacfe4184cacd0d269f2b4c45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabSound: {fileID: 8300000, guid: 10a134a4627f85f4db4db399b06c2bf3, type: 3}
 --- !u!1 &8678185159224041255
 GameObject:
   m_ObjectHideFlags: 0

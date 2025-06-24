@@ -8,39 +8,51 @@ public class ScoreController : MonoBehaviour
     public VideoPlayer videoPlayer;
     public GameObject scoreUI;
     public VideoPlayer outroPlayer;
+    public WaterTap waterTap;
 
     void Start()
     {
         if (outro != null)
         {
             outro.SetActive(false);
-            outroPlayer.Stop(); // Pastikan video tidak diputar saat awal
-        }   
-    }   
+            outroPlayer.Stop(); // Ensure video is not playing at the start  
+        }
+    }
+
     public void OnRetryPressed()
     {
         SceneManager.LoadScene(3);
     }
+
     public void OnContinuePressed()
     {
-        scoreUI.SetActive(false);
-        if(outro != null)
+        AudioSource[] allAudio = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource audio in allAudio)
         {
-            Debug.Log("Menampilkan outro UI dan memutar video outro.");
-            outro.SetActive(true); // Menampilkan UI outro
+            if (audio.isPlaying)
+            {
+                audio.Stop();
+                Debug.Log("Audio stopped: " + audio.gameObject.name);
+            }
+        }
+        scoreUI.SetActive(false);
+        if (outro != null)
+        {
+            Debug.Log("Displaying outro UI and playing outro video.");
+            outro.SetActive(true); // Display outro UI  
             if (outroPlayer != null)
             {
                 outroPlayer.Play();
-                Debug.Log("Memutar video outro.");
+                Debug.Log("Playing outro video.");
             }
             else
             {
-                Debug.LogWarning("Video Player untuk outro tidak ditemukan!");
+                Debug.LogWarning("Video Player for outro not found!");
             }
         }
         else
         {
-            Debug.LogWarning("Outro UI tidak ditemukan!");
+            Debug.LogWarning("Outro UI not found!");
         }
     }
 }
