@@ -5,10 +5,14 @@ using System.Collections;
 public class WaterTap : MonoBehaviour
 {
     public Animator Tap;
+    public Animator NPC;
+    public Animator NPC1;
     public GameObject openText;
     public GameObject closeText;
     public ParticleSystem RunningWater;
     public AudioSource openSound;
+    public AudioSource tapWater;
+    public AudioSource attachBotol;
 
     [Header("Referensi Botol yang Tersambung")]
     public GameObject currentBottle;
@@ -79,6 +83,7 @@ public class WaterTap : MonoBehaviour
 
     private void OpenTap()
     {
+        tapWater.Play();
         Tap?.Play("tapOpen", 0, 0.0f);
         RunningWater?.Play();
         isOpen = true;
@@ -111,6 +116,7 @@ public class WaterTap : MonoBehaviour
 
     private void CloseTap()
     {
+        tapWater?.Stop();
         Tap?.Play("tapClosed", 0, 0.0f);
         RunningWater?.Stop();
         isOpen = false;
@@ -144,6 +150,10 @@ public class WaterTap : MonoBehaviour
         if (currentBottle != null)
         {
             Debug.Log("Botol baru dipasang ke keran.");
+            if (attachBotol != null && !attachBotol.isPlaying)
+            {
+                attachBotol.Play();
+            }
         }
         else
         {
@@ -192,15 +202,35 @@ public class WaterTap : MonoBehaviour
         if (maxScore == 7)
         {
             successSound?.Play();
+            if (NPC != null)
+            {
+                NPC.SetBool("IsClap", true);
+                Debug.Log("Animator NPC parameter 'IsClap' set to true.");
+            }
+            if (NPC1 != null)
+            {
+                NPC1.SetBool("IsClap", true);
+                Debug.Log("Animator NPC parameter 'IsClap' set to true.");
+            }
             if (continueButton != null)
             {
                 continueButton.SetActive(true);
                 Debug.Log("Tombol Continue ditampilkan.");
-            }
+            }   
         }
         else
         {
             failSound?.Play();
+            if (NPC != null)
+            {
+                NPC.SetBool("IsSad", true);
+                Debug.Log("Animator NPC parameter 'IsSad' set to true.");
+            }
+            if (NPC1 != null)
+            {
+                NPC1.SetBool("IsSad", true);
+                Debug.Log("Animator NPC parameter 'IsSad' set to true.");
+            }
             if (continueButton != null)
             {
                 continueButton.SetActive(false);

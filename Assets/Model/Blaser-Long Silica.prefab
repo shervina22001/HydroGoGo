@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7862983cacfe4184cacd0d269f2b4c45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabSound: {fileID: 8300000, guid: 2e47d96e9f060714b92019fbbfe96a17, type: 3}
+  grabSound: {fileID: 8300000, guid: 10a134a4627f85f4db4db399b06c2bf3, type: 3}
 --- !u!1 &3236276609946764663
 GameObject:
   m_ObjectHideFlags: 0
